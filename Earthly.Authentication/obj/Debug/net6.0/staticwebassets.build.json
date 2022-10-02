@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "s3YnPh7GDWb5IYOJvYnykSFDoK+Lz+UzJSAPAybDeWw=",
+  "Source": "Earthly.Authentication",
+  "BasePath": "_content/Earthly.Authentication",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

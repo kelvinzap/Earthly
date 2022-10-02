@@ -9,12 +9,115 @@
   <component name="ChangeListManager">
     <list default="true" id="dca95d6b-a848-4438-882a-c22486b73465" name="Changes" comment="">
       <changelist_data name="kelvinzap" email="chisom859@gmail.com" date="1664747219000" />
-      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/Contracts/V1/ApiRoutes.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/Controllers/IdentityController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/Contracts/V1/Request/CreateNewApiKey.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/Contracts/V1/Request/UserLoginRequest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/Contracts/V1/Response/AuthFailedResponse.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/Contracts/V1/Response/AuthSuccessResponse.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/Data/DataContext.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/Data/Migrations/20221006211210_InitialMigration.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/Data/Migrations/20221006211210_InitialMigration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/Data/Migrations/20221007131506_Added_ApiKeysTable.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/Data/Migrations/20221007131506_Added_ApiKeysTable.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/Data/Migrations/DataContextModelSnapshot.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/Domain/ApiKey.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/Domain/AuthenticationResult.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/Services/AuthService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/Services/IAuthService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/bin/Debug/net6.0/Earthly.Authentication.deps.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/bin/Debug/net6.0/Earthly.Authentication.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/bin/Debug/net6.0/Earthly.Authentication.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/bin/Debug/net6.0/Earthly.Authentication.pdb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/bin/Debug/net6.0/Earthly.Authentication.runtimeconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/bin/Debug/net6.0/Humanizer.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/bin/Debug/net6.0/Microsoft.AspNetCore.Cryptography.Internal.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/bin/Debug/net6.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/bin/Debug/net6.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/bin/Debug/net6.0/Microsoft.Data.SqlClient.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Design.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Relational.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/bin/Debug/net6.0/Microsoft.Extensions.Caching.Memory.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/bin/Debug/net6.0/Microsoft.Extensions.Identity.Core.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/bin/Debug/net6.0/Microsoft.Extensions.Identity.Stores.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/bin/Debug/net6.0/Microsoft.Identity.Client.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/bin/Debug/net6.0/Microsoft.IdentityModel.JsonWebTokens.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/bin/Debug/net6.0/Microsoft.IdentityModel.Logging.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/bin/Debug/net6.0/Microsoft.IdentityModel.Tokens.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/bin/Debug/net6.0/Microsoft.OpenApi.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/bin/Debug/net6.0/Microsoft.Win32.SystemEvents.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/bin/Debug/net6.0/Swashbuckle.AspNetCore.Swagger.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerGen.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerUI.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/bin/Debug/net6.0/System.Configuration.ConfigurationManager.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/bin/Debug/net6.0/System.Drawing.Common.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/bin/Debug/net6.0/System.IdentityModel.Tokens.Jwt.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/bin/Debug/net6.0/System.Runtime.Caching.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/bin/Debug/net6.0/System.Security.Cryptography.ProtectedData.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/bin/Debug/net6.0/System.Security.Permissions.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/bin/Debug/net6.0/System.Windows.Extensions.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/bin/Debug/net6.0/appsettings.Development.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/bin/Debug/net6.0/appsettings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/bin/Debug/net6.0/runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/bin/Debug/net6.0/runtimes/unix/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/bin/Debug/net6.0/runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/bin/Debug/net6.0/runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/bin/Debug/net6.0/runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/bin/Debug/net6.0/runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/bin/Debug/net6.0/runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/bin/Debug/net6.0/runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/bin/Debug/net6.0/runtimes/win/lib/netcoreapp3.0/System.Windows.Extensions.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/bin/Debug/net6.0/runtimes/win/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/bin/Debug/net6.0/runtimes/win/lib/netstandard2.0/System.Runtime.Caching.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/bin/Debug/net6.0/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/obj/Debug/net6.0/Earthly.Authentication.MvcApplicationPartsAssemblyInfo.cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/obj/Debug/net6.0/Earthly.Authentication.MvcApplicationPartsAssemblyInfo.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/obj/Debug/net6.0/Earthly.Authentication.csproj.CopyComplete" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/obj/Debug/net6.0/Earthly.Authentication.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/obj/Debug/net6.0/Earthly.Authentication.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/obj/Debug/net6.0/Earthly.Authentication.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/obj/Debug/net6.0/Earthly.Authentication.genruntimeconfig.cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/obj/Debug/net6.0/Earthly.Authentication.pdb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/obj/Debug/net6.0/apphost.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/obj/Debug/net6.0/ref/Earthly.Authentication.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/obj/Debug/net6.0/refint/Earthly.Authentication.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/obj/Debug/net6.0/staticwebassets.build.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/obj/Earthly.Authentication.csproj.EntityFrameworkCore.targets" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Earthly.Authentication/obj/staticwebassets.pack.sentinel" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Earthly/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Earthly/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Earthly/.idea/dataSources/d619207a-7c4a-4fc0-8178-53dea0022b00.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Earthly/.idea/dataSources/d619207a-7c4a-4fc0-8178-53dea0022b00.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Earthly/.idea/dataSources/d619207a-7c4a-4fc0-8178-53dea0022b00/storage_v2/_src_/database/EarthlyDb.FeoorQ/schema/dbo.sYMBAA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Earthly/.idea/dataSources/d619207a-7c4a-4fc0-8178-53dea0022b00/storage_v2/_src_/database/EarthlyDb.FeoorQ/schema/dbo.sYMBAA.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Earthly/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Earthly/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Earthly.Authentication/Controllers/WeatherForecastController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Earthly.Authentication/Contracts/V1/ApiRoutes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Earthly.Authentication/Contracts/V1/ApiRoutes.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Earthly.Authentication/Contracts/V1/Request/CreateUserRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Earthly.Authentication/Contracts/V1/Request/CreateUserRequest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Earthly.Authentication/Contracts/V1/Response/CreateUserResponse.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Earthly.Authentication/Controllers/IdentityController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Earthly.Authentication/Controllers/IdentityController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Earthly.Authentication/Earthly.Authentication.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Earthly.Authentication/Earthly.Authentication.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Earthly.Authentication/WeatherForecast.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Earthly.Authentication/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Earthly.Authentication/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Earthly.Authentication/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Earthly.Authentication/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Earthly.Authentication/obj/Debug/net6.0/Earthly.Authentication.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Earthly.Authentication/obj/Debug/net6.0/Earthly.Authentication.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Earthly.Authentication/obj/Debug/net6.0/Earthly.Authentication.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Earthly.Authentication/obj/Debug/net6.0/Earthly.Authentication.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Earthly.Authentication/obj/Debug/net6.0/Earthly.Authentication.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Earthly.Authentication/obj/Debug/net6.0/Earthly.Authentication.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Earthly.Authentication/obj/Debug/net6.0/Earthly.Authentication.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Earthly.Authentication/obj/Debug/net6.0/Earthly.Authentication.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Earthly.Authentication/obj/Earthly.Authentication.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Earthly.Authentication/obj/Earthly.Authentication.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Earthly.Authentication/obj/Earthly.Authentication.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Earthly.Authentication/obj/Earthly.Authentication.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Earthly.Authentication/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Earthly.Authentication/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Earthly.Authentication/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Earthly.Authentication/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Earthly.Authentication/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Earthly.Authentication/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Earthly.Authentication/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Earthly.Authentication/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Earthly.Contracts/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Earthly.Contracts/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Earthly/bin/Debug/net6.0/Earthly.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Earthly/bin/Debug/net6.0/Earthly.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Earthly/bin/Debug/net6.0/Earthly.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Earthly/bin/Debug/net6.0/Earthly.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Earthly/obj/Debug/net6.0/Earthly.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Earthly/obj/Debug/net6.0/Earthly.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Earthly/obj/Debug/net6.0/Earthly.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Earthly/obj/Debug/net6.0/Earthly.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Earthly/obj/Debug/net6.0/Earthly.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Earthly/obj/Debug/net6.0/Earthly.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Earthly/obj/Debug/net6.0/ref/Earthly.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Earthly/obj/Debug/net6.0/ref/Earthly.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Earthly/obj/Debug/net6.0/refint/Earthly.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Earthly/obj/Debug/net6.0/refint/Earthly.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Earthly/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Earthly/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Earthly/obj/staticwebassets.pack.sentinel" beforeDir="false" afterPath="$PROJECT_DIR$/Earthly/obj/staticwebassets.pack.sentinel" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,25 +151,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "sqlserver.localdb",
-      "sqlserver"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlserver.localdb&quot;,
+      &quot;sqlserver&quot;
     ]
   }
-}]]></component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.Earthly">
+}</component>
+  <component name="RunManager" selected=".NET Launch Settings Profile.Earthly.Authentication">
     <configuration name="Earthly" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Earthly/Earthly.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net6.0" />
@@ -155,7 +258,12 @@
       <workItem from="1664726461389" duration="4483000" />
       <workItem from="1664807887307" duration="558000" />
       <workItem from="1664927057633" duration="4101000" />
-      <workItem from="1665064466403" duration="8831000" />
+      <workItem from="1665064466403" duration="13117000" />
+      <workItem from="1665128809311" duration="9126000" />
+      <workItem from="1665165264680" duration="8226000" />
+      <workItem from="1665321439582" duration="13311000" />
+      <workItem from="1665410679263" duration="9634000" />
+      <workItem from="1665663435326" duration="7610000" />
     </task>
     <task id="LOCAL-00001" summary="Implemented timezones for each Country">
       <created>1664732574400</created>
@@ -182,7 +290,7 @@
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
-    <option name="startingDirectory" value="C:\Users\John Onuoha\RiderProjects\Earthly\Earthly" />
+    <option name="startingDirectory" value="C:\Users\John Onuoha\RiderProjects\Earthly\Earthly.Authentication" />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
