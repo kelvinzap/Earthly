@@ -1,0 +1,12 @@
+C:\Users\John Onuoha\RiderProjects\Earthly\Earthly.Contracts\bin\Debug\net6.0\Earthly.Contracts.deps.json
+C:\Users\John Onuoha\RiderProjects\Earthly\Earthly.Contracts\bin\Debug\net6.0\Earthly.Contracts.dll
+C:\Users\John Onuoha\RiderProjects\Earthly\Earthly.Contracts\bin\Debug\net6.0\Earthly.Contracts.pdb
+C:\Users\John Onuoha\RiderProjects\Earthly\Earthly.Contracts\obj\Debug\net6.0\Earthly.Contracts.csproj.AssemblyReference.cache
+C:\Users\John Onuoha\RiderProjects\Earthly\Earthly.Contracts\obj\Debug\net6.0\Earthly.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\John Onuoha\RiderProjects\Earthly\Earthly.Contracts\obj\Debug\net6.0\Earthly.Contracts.AssemblyInfoInputs.cache
+C:\Users\John Onuoha\RiderProjects\Earthly\Earthly.Contracts\obj\Debug\net6.0\Earthly.Contracts.AssemblyInfo.cs
+C:\Users\John Onuoha\RiderProjects\Earthly\Earthly.Contracts\obj\Debug\net6.0\Earthly.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\John Onuoha\RiderProjects\Earthly\Earthly.Contracts\obj\Debug\net6.0\Earthly.Contracts.dll
+C:\Users\John Onuoha\RiderProjects\Earthly\Earthly.Contracts\obj\Debug\net6.0\refint\Earthly.Contracts.dll
+C:\Users\John Onuoha\RiderProjects\Earthly\Earthly.Contracts\obj\Debug\net6.0\Earthly.Contracts.pdb
+C:\Users\John Onuoha\RiderProjects\Earthly\Earthly.Contracts\obj\Debug\net6.0\ref\Earthly.Contracts.dll

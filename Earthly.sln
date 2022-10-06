@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Earthly", "Earthly\Earthly.csproj", "{E699FFE0-2303-4570-ACC9-A12470CDE6CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Earthly.Contracts", "Earthly.Contracts\Earthly.Contracts.csproj", "{F736E13D-050F-4A70-8518-3302D465745B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Earthly.Authentication", "Earthly.Authentication\Earthly.Authentication.csproj", "{48A203BC-4014-4A10-9BD3-8C536DD9AFC2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E699FFE0-2303-4570-ACC9-A12470CDE6CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E699FFE0-2303-4570-ACC9-A12470CDE6CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E699FFE0-2303-4570-ACC9-A12470CDE6CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E699FFE0-2303-4570-ACC9-A12470CDE6CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F736E13D-050F-4A70-8518-3302D465745B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F736E13D-050F-4A70-8518-3302D465745B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F736E13D-050F-4A70-8518-3302D465745B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F736E13D-050F-4A70-8518-3302D465745B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48A203BC-4014-4A10-9BD3-8C536DD9AFC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48A203BC-4014-4A10-9BD3-8C536DD9AFC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48A203BC-4014-4A10-9BD3-8C536DD9AFC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48A203BC-4014-4A10-9BD3-8C536DD9AFC2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
