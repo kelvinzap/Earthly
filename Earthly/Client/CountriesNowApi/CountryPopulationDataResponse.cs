@@ -1,4 +1,4 @@
-﻿namespace Earthly.Contracts.CountriesNowApiResponses;
+﻿namespace Earthly.Client.CountriesNowApi;
 
 public class CountryPopulationDataResponse
 {

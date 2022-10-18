@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Earthly.Contracts.TimezoneDBApiResponses;
+namespace Earthly.Client.TimezoneDBApi;
 
 
 public class Result

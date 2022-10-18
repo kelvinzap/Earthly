@@ -67,4 +67,12 @@ public class IdentityController : ControllerBase
         });
     }
 
+    [HttpGet(ApiRoutes.Identity.Verify)]
+    public async Task<IActionResult> Verify([FromHeader] string apiKey)
+    {
+        var authResponse = await _authService.VerifyApiKeyAsync(apiKey);
+
+        return authResponse ? Ok() : BadRequest();
+    }
+
 }

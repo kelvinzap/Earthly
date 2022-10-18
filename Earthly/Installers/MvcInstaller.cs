@@ -1,5 +1,7 @@
-﻿using Earthly.Client;
-using Earthly.Contracts.TimezoneDBApiResponses;
+﻿using System.Net.Http.Headers;
+using Earthly.Client;
+using Earthly.Client.CountriesNowApi;
+using Earthly.Client.TimezoneDBApi;
 using Earthly.Services;
 using Microsoft.OpenApi.Models;
 
@@ -47,5 +49,10 @@ public class MvcInstaller : IInstaller
         services.AddSingleton<ICountryTimezoneApiService, TimeZoneDBApiClient>();
         var timezoneDBApiKey = configuration.GetSection("TimezoneDBApiKey").Value;
         services.AddSingleton(timezoneDBApiKey);
+        services.AddSingleton<IAuthenticateUser, AuthenticateUser>();
+        services.AddHttpClient("Authentication", c =>
+        {
+            c.BaseAddress = new Uri("https://localhost:7292/api/v1/identity/");
+        });
     }
 }

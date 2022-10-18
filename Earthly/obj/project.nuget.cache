@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "yxLqz3bEEK2nuiewx9CCgw779a0xjXe2eLlpaN7AhleMTVIFQePYZ2tYdmwjxxozFOyF9TGCziGgAPGFYJFhxQ==",
+  "dgSpecHash": "QImz1ugNaZiXpHVSGb4aAysdkO8DOybJP8MD64r2NwwHBTucg5hyQGH9/hKxtd7Z1BKva23pKtU1du0K7bzYVA==",
   "success": true,
   "projectFilePath": "C:\\Users\\John Onuoha\\RiderProjects\\Earthly\\Earthly\\Earthly.csproj",
   "expectedPackageFiles": [
@@ -75,6 +75,7 @@
     "C:\\Users\\John Onuoha\\.nuget\\packages\\system.linq\\4.1.0\\system.linq.4.1.0.nupkg.sha512",
     "C:\\Users\\John Onuoha\\.nuget\\packages\\system.linq.expressions\\4.1.0\\system.linq.expressions.4.1.0.nupkg.sha512",
     "C:\\Users\\John Onuoha\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
+    "C:\\Users\\John Onuoha\\.nuget\\packages\\system.net.http.json\\6.0.0\\system.net.http.json.6.0.0.nupkg.sha512",
     "C:\\Users\\John Onuoha\\.nuget\\packages\\system.objectmodel\\4.0.12\\system.objectmodel.4.0.12.nupkg.sha512",
     "C:\\Users\\John Onuoha\\.nuget\\packages\\system.reflection\\4.1.0\\system.reflection.4.1.0.nupkg.sha512",
     "C:\\Users\\John Onuoha\\.nuget\\packages\\system.reflection.emit\\4.0.1\\system.reflection.emit.4.0.1.nupkg.sha512",

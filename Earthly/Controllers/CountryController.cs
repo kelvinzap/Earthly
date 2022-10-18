@@ -1,10 +1,12 @@
 ﻿using Earthly.Contracts.V1;
 using Earthly.Contracts.V1.Response;
+using Earthly.Filter;
 using Earthly.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Earthly.Controllers;
 
+[ApiKeyAuth]
 public class CountryController : Controller
 {
 

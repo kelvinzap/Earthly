@@ -142,6 +142,7 @@ public class AuthService : IAuthService
             };
 
         apiKeyInDb.Invalidated = true;
+        apiKeyInDb.InvalidationDate = DateTime.UtcNow;
         var invalidated = await _dataContext.SaveChangesAsync();
         
         if(invalidated > 0)
@@ -157,7 +158,26 @@ public class AuthService : IAuthService
             };
         
     }
-    
+
+    public async Task<bool> VerifyApiKeyAsync(string apiKey)
+    {
+        var apiKeys = await _dataContext.ApiKeys.Where(x => !x.Invalidated).ToListAsync();
+
+        var verified = false;
+        
+        foreach (var Key in apiKeys)
+        {
+            var decryptedKey = await DecryptApikey(Key.Id);
+
+            if (apiKey.Equals(decryptedKey))
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     private Aes CreateCipher()
     {
         var cipher = Aes.Create();

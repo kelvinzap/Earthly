@@ -1,4 +1,4 @@
-﻿namespace Earthly.Contracts.TimezoneDBApiResponses;
+﻿namespace Earthly.Client.TimezoneDBApi;
 
 public class TimezoneDBApiKey
 {

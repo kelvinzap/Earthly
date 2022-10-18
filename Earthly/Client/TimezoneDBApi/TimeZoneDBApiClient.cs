@@ -1,17 +1,11 @@
-﻿using System.Data;
-using System.Xml;
-using System.Xml.Linq;
-using System.Xml.Serialization;
-using Earthly.Contracts.CountriesNowApiResponses;
-using Earthly.Contracts.TimezoneDBApiResponses;
+﻿using System.Xml.Linq;
 using Earthly.Data;
-using Earthly.Domain;
 using Earthly.Services;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using Formatting = Newtonsoft.Json.Formatting;
 
-namespace Earthly.Client;
+namespace Earthly.Client.TimezoneDBApi;
 
 public class TimeZoneDBApiClient : ICountryTimezoneApiService
 {
