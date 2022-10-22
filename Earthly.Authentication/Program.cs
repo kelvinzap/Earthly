@@ -1,24 +1,23 @@
 using Earthly.Authentication.Data;
+using Earthly.Authentication.Installers;
 using Earthly.Authentication.Services;
+using Earthly.Authentication.Settings;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using NETCore.MailKit.Extensions;
+using NETCore.MailKit.Infrastructure.Internal;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<DataContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-builder.Services.AddIdentity<IdentityUser, IdentityRole>(options => 
-        options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<DataContext>();
-builder.Services.AddScoped<IAuthService, AuthService>();
+
+
+builder.Services.InstallServicesInAssembly(builder.Configuration);
 var encryptionKey = builder.Configuration.GetSection("EncryptionKey").Value;
 builder.Services.AddSingleton(encryptionKey);
+
 
 var app = builder.Build();
 

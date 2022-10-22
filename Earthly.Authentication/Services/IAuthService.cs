@@ -10,4 +10,5 @@ public interface IAuthService
     public Task<AuthenticationResult> LoginAsync(UserLoginRequest request);
     public Task<AuthenticationResult> RegenerateAsync(CreateNewApiKey request);
     public Task<bool> VerifyApiKeyAsync(string apiKey);
+    public Task<bool> ConfirmEmailAsync(string userId, string token);
 } 

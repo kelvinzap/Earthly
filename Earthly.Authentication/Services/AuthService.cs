@@ -1,12 +1,17 @@
 ﻿using System.Security.Cryptography;
+using System.Security.Policy;
 using System.Text;
+using System.Web;
 using Earthly.Authentication.Contracts.V1.Request;
 using Earthly.Authentication.Data;
 using Earthly.Authentication.Domain;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Routing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualBasic.CompilerServices;
+using Org.BouncyCastle.Asn1.Ocsp;
 
 namespace Earthly.Authentication.Services;
 
@@ -47,23 +52,43 @@ public class AuthService : IAuthService
             Email = request.Email
         };
 
-        var user = await _userManager.CreateAsync(newUser, request.Password);
+        var createUser = await _userManager.CreateAsync(newUser, request.Password);
 
-        if (!user.Succeeded)
+        if (!createUser.Succeeded)
             return new AuthenticationResult
             {
-                Errors = user.Errors.Select(x => x.Description)
+                Errors = createUser.Errors.Select(x => x.Description)
             };
+        
+        //generation of confirmation code
+        var originalCode = await _userManager.GenerateEmailConfirmationTokenAsync(newUser);
+        var code = HttpUtility.UrlEncode(originalCode);
 
         var apiKey = await GenerateApiKey(userId);
 
         return new AuthenticationResult
         {
             Success = true,
-            ApiKey = apiKey
+            ApiKey = apiKey,
+            EmailConfirmCode = code,
+            UserId = userId,
+            Email = newUser.Email
         };
     }
 
+    public async Task<bool> ConfirmEmailAsync(string userId, string token)
+    {
+        var user = await _userManager.FindByIdAsync(userId);
+        
+        if (user == null)
+            return false;
+
+        var originalCode = HttpUtility.UrlDecode(token);
+        var result = await _userManager.ConfirmEmailAsync(user, token);
+        
+        var message = string.Join(", ", result.Errors.Select(x => "Code " + x.Code + " Description" + x.Description));
+        return result.Succeeded;
+    }
     
     
     public async Task<AuthenticationResult> LoginAsync(UserLoginRequest request)
@@ -161,7 +186,7 @@ public class AuthService : IAuthService
 
     public async Task<bool> VerifyApiKeyAsync(string apiKey)
     {
-        var apiKeys = await _dataContext.ApiKeys.Where(x => !x.Invalidated).ToListAsync();
+        var apiKeys = await _dataContext.ApiKeys.Include(x => x.User).Where(x => !x.Invalidated && x.User.EmailConfirmed).ToListAsync();
 
         var verified = false;
         

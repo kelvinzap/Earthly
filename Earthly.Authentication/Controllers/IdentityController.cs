@@ -1,7 +1,9 @@
-﻿using Earthly.Authentication.Contracts.V1;
+﻿using System.Security.Claims;
+using Earthly.Authentication.Contracts.V1;
 using Earthly.Authentication.Contracts.V1.Request;
 using Earthly.Authentication.Contracts.V1.Response;
 using Earthly.Authentication.Services;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Earthly.Authentication.Controllers;
@@ -10,10 +12,11 @@ namespace Earthly.Authentication.Controllers;
 public class IdentityController : ControllerBase
 {
     private readonly IAuthService _authService;
-
-    public IdentityController(IAuthService authService)
+    private readonly IAuthEmailService _emailService;
+    public IdentityController(IAuthService authService, IAuthEmailService emailService)
     {
         _authService = authService;
+        _emailService = emailService;
     }
 
     [HttpPost(ApiRoutes.Identity.Register)]
@@ -27,12 +30,30 @@ public class IdentityController : ControllerBase
                 Errors = authResponse.Errors
             });
         
+        //generation of the email confirm link
+        var baseUrl = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host.ToUriComponent()}";
+        var link = baseUrl + "/" + ApiRoutes.Identity.ConfirmEmail + "?userId=" + authResponse.UserId + "&code=" + authResponse.EmailConfirmCode;
+
+        await _emailService.SendAsync(authResponse.Email, "Confirm Your Earthly Account", link, true);
+        
         return Ok(new AuthSuccessResponse
         {
             ApiKey = authResponse.ApiKey
         });
     }
-    
+
+    [HttpGet(ApiRoutes.Identity.ConfirmEmail)]
+    public async Task<IActionResult> ConfirmEmail([FromQuery] string userId, string code)
+    {
+        var result = await _authService.ConfirmEmailAsync(userId, code);
+
+        return result ? Ok("Confirmed") : BadRequest("Something went wrong");
+    }
+    public override SignInResult SignIn(ClaimsPrincipal principal, AuthenticationProperties properties, string authenticationScheme)
+    {
+        return base.SignIn(principal, properties, authenticationScheme);
+    }
+
     [HttpPost(ApiRoutes.Identity.Login)]
     public async Task<IActionResult> Login([FromBody] UserLoginRequest request)
     {
